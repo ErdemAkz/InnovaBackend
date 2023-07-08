@@ -105,10 +105,10 @@ public class AuthController {
 	}
 
 
-	@GetMapping("/erdem")
+	/*@GetMapping("/erdem")
 	public ResponseEntity<?> erdem() {
 
 		return ResponseEntity.ok(new MessageResponse("erdem hello"));
-	}
+	}*/
 	
 }
