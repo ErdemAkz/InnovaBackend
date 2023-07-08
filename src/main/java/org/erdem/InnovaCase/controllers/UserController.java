@@ -92,9 +92,6 @@ public class UserController {
 
 			LocalDate date = user.getTransactions().get(i).getLocalDate();
 
-			System.out.println("asd1: "+targetDate.toString());
-			System.out.println("asd2: "+date.toString());
-
 			if (date.isEqual(targetDate)){
 				filteredTransactions.add(user.getTransactions().get(i));
 			}
