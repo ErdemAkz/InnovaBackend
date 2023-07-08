@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Emre\",\n    \"lastName\": \"Yıldız\",\n    \"email\": \"emre.yıldız@etu.edu.tr\",\n    \"password\": \"emre1234\"\n}",
+					"raw": "{\n    \"firstName\": \"erdem\",\n    \"lastName\": \"akyuz\",\n    \"email\": \"erdem@gmail.com\",\n    \"password\": \"123456\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"e.akyuz@etu.edu.tr\",\n    \"password\": \"erdem123\"\n}",
+					"raw": "{\n    \"email\": \"erdem@gmail.com\",\n    \"password\": \"123456\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,9 +70,40 @@
 		},
 		{
 			"name": "Authorization Test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmRlbUBnbWFpbC5jb20iLCJqdGkiOiI2NGE5MGRlNDFjY2NlMTE3NTQ5ZjY5MjQiLCJpYXQiOjE2ODg4MDA4MDN9.HXuwMEteRQQ7PD_uzqMTs9utxUDOSI-sGn3MEicirumJMkhctBvI1JWs_r7K1eto7R7Hp6aMbry8tA6Frl2_AA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
 			},
 			"response": []
 		},
@@ -83,10 +114,16 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmRlbUBnbWFpbC5jb20iLCJqdGkiOiI2NGE5MmQ0ZDQzM2Y4ZTIxMzM4ODUyNjMiLCJpYXQiOjE2ODg4MTMyNzd9.NOrAgVsA4cFzQY-pLU3jHy7s6ptPh9aNp0WL_WlcTCD4P5eE9LaCvHkPEX7kJQlbu0Bzv3iDFnm8RNrKQS08NQ",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"erdem\",\n    \"lastName\": \"akyuz\",\n    \"email\": \"erdem@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -94,7 +131,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/sendMoney",
+					"raw": "http://localhost:8080/api/v1/sendMoney?toWho=dershane&amount=150",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -104,6 +141,16 @@
 						"api",
 						"v1",
 						"sendMoney"
+					],
+					"query": [
+						{
+							"key": "toWho",
+							"value": "dershane"
+						},
+						{
+							"key": "amount",
+							"value": "150"
+						}
 					]
 				}
 			},
@@ -113,7 +160,13 @@
 			"name": "Get Total Transactions",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmRlbUBnbWFpbC5jb20iLCJqdGkiOiI2NGE5MmQ0ZDQzM2Y4ZTIxMzM4ODUyNjMiLCJpYXQiOjE2ODg4MDg3ODh9.swNdIt34isKN0C-1XRoeGxljutgpk25hee4KhoXHye9814Nx5sR7T59WJfNjxdKlI1VPmPWO6HlWOIBOWxRsXg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:8080/api/v1/getTotalTransactions",
 					"protocol": "http",
@@ -137,7 +190,13 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmRlbUBnbWFpbC5jb20iLCJqdGkiOiI2NGE5MmQ0ZDQzM2Y4ZTIxMzM4ODUyNjMiLCJpYXQiOjE2ODg4MDg3ODh9.swNdIt34isKN0C-1XRoeGxljutgpk25hee4KhoXHye9814Nx5sR7T59WJfNjxdKlI1VPmPWO6HlWOIBOWxRsXg",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\"seed\": \"GVis31MuH3vD5NN2jd4Dqg==\",\n\"mac\": \"1kXF+mCxKVvP+dJ5UcsAuZhmDQ==\"}",
@@ -158,6 +217,47 @@
 						"api",
 						"v1",
 						"getMyTransactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transactions On Date",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmRlbUBnbWFpbC5jb20iLCJqdGkiOiI2NGE5MmQ0ZDQzM2Y4ZTIxMzM4ODUyNjMiLCJpYXQiOjE2ODg4MDg3ODh9.swNdIt34isKN0C-1XRoeGxljutgpk25hee4KhoXHye9814Nx5sR7T59WJfNjxdKlI1VPmPWO6HlWOIBOWxRsXg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/getTransactionsOnDate?year=2023&month=7&day=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"getTransactionsOnDate"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2023"
+						},
+						{
+							"key": "month",
+							"value": "7"
+						},
+						{
+							"key": "day",
+							"value": "8"
+						}
 					]
 				}
 			},

@@ -10,6 +10,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -72,6 +76,31 @@ public class UserController {
 
 		return transactions.toString();
 
+
+	}
+
+
+	@GetMapping("getTransactionsOnDate")
+	@PreAuthorize("hasAuthority('USER')")
+	public String spendingsOnDate(Authentication authentication, @RequestParam int year, int month, int day){
+		User user = authService.findByEmail(authentication.getName());
+		List<Transaction> filteredTransactions = new ArrayList<>();
+
+
+		for (int i=0; i<user.getTransactions().size();i++){
+			LocalDate targetDate = LocalDate.of(year,month,day);
+
+			LocalDate date = user.getTransactions().get(i).getLocalDate();
+
+			System.out.println("asd1: "+targetDate.toString());
+			System.out.println("asd2: "+date.toString());
+
+			if (date.isEqual(targetDate)){
+				filteredTransactions.add(user.getTransactions().get(i));
+			}
+
+		}
+		return filteredTransactions.toString();
 
 	}
 

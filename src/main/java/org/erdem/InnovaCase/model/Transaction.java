@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Document(collection = "transactions")
 public class Transaction implements Serializable{
@@ -17,6 +19,7 @@ public class Transaction implements Serializable{
     private String fromWho;
     private String toWho;
     private double amount;
+    private LocalDate localDate;
 
 
     public Transaction() {
@@ -26,6 +29,7 @@ public class Transaction implements Serializable{
         this.fromWho=fromWho;
         this.toWho=toWho;
         this.amount = amount;
+        this.localDate = LocalDate.now();
     }
 
     public String getId() {
@@ -60,13 +64,21 @@ public class Transaction implements Serializable{
         this.amount = amount;
     }
 
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
     @Override
     public String toString() {
         return "Transaction{" +
                 "id='" + id + '\'' +
                 ", fromWho='" + fromWho + '\'' +
                 ", toWho='" + toWho + '\'' +
-                ", amount=" + amount +
+                ", amount=" + amount + '\'' +
+                ", date=" + localDate +
                 '}';
     }
 
